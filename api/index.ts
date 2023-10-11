@@ -3,11 +3,11 @@ import express from "express";
 const app = express();
 
 app.get("/", (req, res) => {
-	res.send("New Home Route 2");
+	res.send("Express + Typescript server by jvillegasl");
 });
 
 app.get("/api", (req, res) => {
-	res.send("New API Route 2");
+	res.send("API Route");
 });
 
 export default app;
