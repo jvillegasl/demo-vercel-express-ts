@@ -1,5 +1,5 @@
 *.ts
-tsconfig.json
+tsconfig*.json
 .eslintrc.json
 .prettierrc.json
 api/dist/server.js

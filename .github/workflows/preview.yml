@@ -7,8 +7,20 @@ on:
     branches:
       - development
 jobs:
-  Deploy-Preview:
+  test:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Test
+        run: npm run test
+      - name: Raise SUCCESS Flag
+        run: echo Success
+
+  deploy-preview:
+    runs-on: ubuntu-latest
+    needs: [test]
     steps:
       - uses: actions/checkout@v4
       - name: Install Vercel CLI
