@@ -9,7 +9,8 @@
 		"build": "rm -rf ./api/dist/ && tsc --build",
 		"start": "node ./api/dist/server.js",
 		"lint": "eslint . --ext ts,tsx",
-		"pretty": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,sass}\""
+		"pretty": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,sass}\"",
+		"deploy:preview": "npm run build && vercel"
 	},
 	"keywords": [],
 	"author": "",
