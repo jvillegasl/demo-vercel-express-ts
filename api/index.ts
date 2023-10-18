@@ -5,14 +5,31 @@ moduleAlias.addAliases({
 });
 
 import express from "express";
-import apiRouter from "./routes/api";
+import getApiRouter from "./routes/api";
+import { ITodoItemRepository } from "./interfaces";
+import { TodoItemRepository } from "./repositories";
 
-const app = express();
+export type AppDependencies = {
+	todoItemRepository: ITodoItemRepository;
+};
 
-app.get("/", (req, res) => {
-	res.send("Express + Typescript server by jvillegasl from GitHub Actions");
-});
+export function getApp(
+	dependencies: AppDependencies = {
+		todoItemRepository: new TodoItemRepository(),
+	},
+) {
+	const app = express();
 
-app.use("/api", apiRouter);
+	app.get("/", (req, res) => {
+		res.send(
+			"Express + Typescript server by jvillegasl from GitHub Actions",
+		);
+	});
 
+	app.use("/api", getApiRouter(dependencies));
+
+	return app;
+}
+
+const app = getApp();
 export default app;
