@@ -1,5 +1,11 @@
-import "module-alias/register";
+import moduleAlias from "module-alias";
+
+moduleAlias.addAliases({
+	"@": `${__dirname}`,
+});
+
 import express from "express";
+import apiRouter from "./routes/api";
 
 const app = express();
 
@@ -7,8 +13,6 @@ app.get("/", (req, res) => {
 	res.send("Express + Typescript server by jvillegasl from GitHub Actions");
 });
 
-app.get("/api", (req, res) => {
-	res.send("API Route");
-});
+app.use("/api", apiRouter);
 
 export default app;
