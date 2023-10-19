@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "globstar -- node --test --no-warnings --loader tsx ./api/__tests__/**/*.test.ts",
+		"test": "globstar -- node --test --no-warnings --loader tsx __tests__/**/*.test.ts",
 		"dev": "nodemon",
 		"build": "babel api --out-dir api/dist --extensions \".ts\"",
 		"start": "node ./api/dist/server.js",

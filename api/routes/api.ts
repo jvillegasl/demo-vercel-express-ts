@@ -13,7 +13,9 @@ export default function getApiRouter({ todoItemRepository }: AppDependencies) {
 	apiRouter.get("/todo-items", (req, res) =>
 		todoItemsController.getAll(req, res),
 	);
-	apiRouter.post('/todo-items', (req, res) => todoItemsController.create(req, res))
+	apiRouter.post("/todo-items", (req, res) =>
+		todoItemsController.create(req, res),
+	);
 
 	return apiRouter;
 }

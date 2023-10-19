@@ -5,7 +5,11 @@ import request from "supertest";
 import { getApp } from "@/index";
 import { getRandomInt } from "@/utils";
 
-import { MockTodoItemRepository, mockTodoItem, mockTodoItems } from "../mocks";
+import {
+	MockTodoItemRepository,
+	mockTodoItem,
+	mockTodoItems,
+} from "@tests/mocks";
 
 describe("GET /api/todo-items", () => {
 	const todoItemsCount = getRandomInt(0, 10);
