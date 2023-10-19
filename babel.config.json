@@ -1,0 +1,25 @@
+{
+	"presets": [
+		"@babel/preset-typescript",
+		[
+			"@babel/env",
+			{
+				"targets": {
+					"node": "current"
+				}
+			}
+		]
+	],
+	"plugins": [
+		[
+			"module-resolver",
+			{
+				"root": ["./api"],
+				"alias": {
+					"@": "./api"
+				}
+			}
+		]
+	],
+	"ignore": ["**/*.test.ts"]
+}
