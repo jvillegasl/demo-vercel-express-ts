@@ -1,9 +1,3 @@
-import moduleAlias from "module-alias";
-
-moduleAlias.addAliases({
-	"@": `${__dirname}`,
-});
-
 import express from "express";
 import apiRouter from "./routes/api";
 
