@@ -8,6 +8,8 @@ Express + Typescript demo app. Includ configuration to deploy on Vercel using Gi
 -   CI/CD wit GitHub Actions
 -   Path alias
 -   Testing using Node 18 native Test Runner
+-   Babel compiler
+-   Dependency Injection and Inversion
 
 ## Requirements
 
